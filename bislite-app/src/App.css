@@ -1,0 +1,21 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration:none;
+}
+
+
+.container{
+  /* background: #e8ebf1; */
+  /* height: 120px; */
+  font-family: Arial, sans-serif;
+}
+/* .slick-active {
+  marginTop: 20px;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50px;
+} */

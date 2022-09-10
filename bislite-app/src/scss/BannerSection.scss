@@ -1,0 +1,314 @@
+@import 'color';
+@import 'responsive';
+
+%font-size13 {
+  font-size: 13px;
+  color: $textcolor;
+  line-height: 26px;
+}
+%font-size15 {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 26px;
+}
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+#body {
+  // banner section
+  .slideshow-container {
+    border-top: 1px solid $bluegreen;
+    background: $spray;
+    padding: 10px 0;
+    .wrapper {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 15px;
+      .slideshow-list {
+        .slideshow-items {
+          img {
+            width: 1000px !important;
+            height: 440px !important;
+          }
+        }
+      }
+    }
+  }
+  //   mid- content
+  .mid-content {
+    background: $brightgray;
+    .wrapper-content {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-top: 60px;
+      padding: 60px 15px 0 15px;
+      @extend %align-center;
+      @include tablet {
+        display: block;
+      }
+      .midContent-group {
+        @include tablet {
+          margin-bottom: 20px;
+        }
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+        .header-content {
+          @extend %align-center;
+          margin-bottom: 15px;
+          h2 {
+            @extend %font-size15;
+            margin-left: 10px;
+          }
+        }
+        span {
+          @extend %font-size13;
+          margin-bottom: 20px;
+        }
+        .footer-content {
+          margin-top: 10px;
+          a {
+            color: $similar;
+            margin-left: 10px;
+            &:hover {
+              text-decoration: revert;
+            }
+          }
+        }
+      }
+    }
+  }
+  .lastest-work {
+    .wrapper-work {
+      border-bottom: 1px solid $gray;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+      .header-work {
+        padding-bottom: 10px;
+        margin: 24px 0;
+        border-bottom: 1px solid $gray;
+        @extend %align-center;
+        h2 {
+          @extend %font-size15;
+          margin-left: 10px;
+        }
+      }
+      .banner-work {
+        // border-bottom: 1px solid $gray;
+
+        ul {
+          padding: 0;
+          .slick-arrow::before {
+            color: $similar;
+          }
+          li {
+            visibility: unset;
+            height: 160px;
+            position: relative;
+            margin: 30px 0;
+            a {
+              img {
+                opacity: 0;
+                position: absolute;
+                bottom: 0;
+              }
+            }
+            &:hover img {
+              opacity: 1;
+            }
+            button {
+              display: none;
+            }
+          }
+          #work-1 {
+            background: url(../asset/images/lastestWork/latest_work01.jpg)
+              no-repeat;
+          }
+          #work-2 {
+            background: url(../asset/images/lastestWork/latest_work02.jpg)
+              no-repeat;
+          }
+          #work-3 {
+            background: url(../asset/images/lastestWork/latest_work03.jpg)
+              no-repeat;
+          }
+          #work-4 {
+            background: url(../asset/images/lastestWork/latest_work04.jpg)
+              no-repeat;
+          }
+        }
+      }
+    }
+  }
+  .content-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-top: 20px;
+    .bottom-content {
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      @include tablet;
+      @include desktop {
+        flex-direction: column;
+      }
+      .testimonials {
+        width: 42%;
+        margin-right: 40px;
+        @include tablet;
+        @include desktop {
+          width: 100%;
+        }
+        .testimonials-title {
+          padding-left: 38px;
+          margin-bottom: 20px;
+          background: url(../asset/images/clients/speechcloud_icon.png)
+            no-repeat;
+        }
+        .testimonials-description {
+          @extend %font-size13;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        .testimonials-author {
+          @extend %font-size15;
+          font-style: italic;
+        }
+      }
+      .clients {
+        width: 48%;
+        @include tablet;
+        @include desktop {
+          margin-top: 30px;
+          float: initial;
+          width: 100%;
+        }
+        .clients-title {
+          padding-left: 38px;
+          margin-bottom: 20px;
+          background: url(../asset/images/clients/people_icon.png) no-repeat;
+        }
+        .clients-list {
+          background: $brightgray;
+          display: flex;
+          flex-wrap: wrap;
+          @include tablet;
+          @include desktop {
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: transparent;
+          }
+          li {
+            width: calc(100% / 3);
+            @include tablet;
+            @include desktop {
+              width: 32%;
+            }
+            img {
+              width: 100%;
+              @include tablet;
+              @include desktop {
+                width: 100%;
+                margin: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+    // download-section
+    .download-section {
+      margin-top: 50px;
+      background-color: $bubbles;
+      border: 1px solid $spray;
+      padding: 30px;
+      overflow: hidden;
+      @include tablet {
+        width: auto;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      @include desktop {
+        width: auto;
+        margin-top: 50px;
+      }
+      .download-title {
+        float: left;
+        width: 80%;
+        max-width: 600px;
+        line-height: 26px;
+        font-weight: 600;
+        @include tablet {
+          margin-bottom: 20px;
+          width: auto;
+        }
+      }
+      #btn-download {
+        width: 53%;
+        max-width: 250px;
+        color: $black;
+        font-size: 18px;
+        font-weight: bold;
+        float: right;
+        height: 64px;
+        background: url(../asset/images/download_button.png) no-repeat;
+        padding: 22px 0 0 72px;
+        @include tablet {
+          padding: 22px 22px 22px 72px;
+          width: auto;
+        }
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.slick-slider {
+  .slick-prev {
+    left: auto;
+  }
+  .slick-dots {
+    li {
+      button {
+        width: 14px;
+        height: 14px;
+        border-radius: 50px;
+        background-color: #71a3a7;
+        &::before {
+          display: none;
+        }
+      }
+    }
+    .slick-active {
+      button {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.lastest-work {
+  .slick-list {
+    margin: 0 -5px;
+  }
+  .slick-slide {
+    > div {
+      padding: 0 5px;
+    }
+  }
+}

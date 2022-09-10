@@ -1,0 +1,139 @@
+@import 'color';
+@import 'responsive';
+
+.header {
+  background: #e8ebf1;
+  .wrapper {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include tablet {
+      flex-direction: column;
+      padding: 16px 15px;
+      height: auto;
+    }
+
+    .icon-menu {
+      background: url(../asset/images/logo.png) no-repeat;
+      display: block;
+      height: 37px;
+      width: 148px;
+    }
+    .toggleMenu {
+      display: none;
+      @include mobile {
+        display: inline-block;
+        margin-top: 15px;
+        background: #2aacc8;
+        text-align: center;
+        font-size: 1.2em;
+        width: 100%;
+        color: #fff;
+        padding: 5px 10px;
+      }
+    }
+    .navbar_logo {
+      opacity: 0;
+      @include tablet {
+        opacity: 1;
+        position: absolute;
+        right: -2px;
+        font-size: 2rem;
+        top: 30px;
+        padding: 15px;
+
+        &:hover {
+          background-color: red;
+        }
+      }
+    }
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      @include tablet {
+        margin-top: 16px;
+        width: 100%;
+        display: block;
+        background: rgba(255, 255, 255, 0.22);
+      }
+      @include mobile {
+        display: none;
+      }
+      > li {
+        margin: 0 16px;
+        position: relative;
+        border-top: 5px solid transparent;
+        &:hover {
+          border-top: 5px solid $similar;
+          background: $white;
+        }
+        @include tablet {
+          &:hover {
+            border-top: 5px solid $similar;
+            background: $white;
+          }
+        }
+        @include desktop {
+          margin: 0 8px;
+        }
+        a {
+          display: inline-block;
+          color: $black;
+          font-size: 13px;
+          font-weight: bold;
+          padding: 8px 8px;
+          text-transform: uppercase;
+        }
+        &:hover .sub-nav {
+          display: block;
+          z-index: 2;
+        }
+        .sub-nav {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          background-color: $white;
+          position: absolute;
+          padding: 12px 0;
+          border-bottom: 5px solid $similar;
+          width: 197px;
+          top: 100%;
+          display: none;
+          @include tablet {
+            width: 100%;
+          }
+          li {
+            margin: 0 4px;
+            border-bottom: 1px solid $gray;
+            a {
+              color: $black;
+              font-size: 13px;
+              text-transform: capitalize;
+              font-weight: 500;
+              &:hover {
+                color: $similar;
+              }
+            }
+          }
+          li:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+      .service,
+      .portfolio {
+        &:hover {
+          background-color: $white;
+        }
+        .arrow-down {
+          @include tablet {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

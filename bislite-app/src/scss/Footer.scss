@@ -1,0 +1,91 @@
+@import 'color';
+@import 'responsive';
+
+%font-size13 {
+  font-size: 13px;
+  color: $textcolor;
+  line-height: 26px;
+}
+
+%font-size15 {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+#footer {
+  background-color: $brightgray;
+  border-top: 1px solid $gray;
+  margin-top: 40px;
+  overflow: hidden;
+  .wrapper-footer {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+    .a {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr 2fr 2fr;
+      grid-gap: 22px;
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .list-footer {
+        .items-footer {
+          li {
+            a {
+              @extend %font-size13;
+              &:hover {
+                color: $similar;
+              }
+            }
+          }
+        }
+        h2 {
+          @extend %font-size15;
+          margin: 20px 0;
+        }
+        p {
+          @extend %font-size13;
+        }
+        span {
+          @extend %font-size13;
+        }
+        #company {
+          font-weight: 800;
+        }
+        .logo-footer {
+          display: flex;
+          flex-wrap: wrap;
+          overflow: hidden;
+          justify-content: space-between;
+          @include tablet {
+            margin: 0 auto;
+            max-width: 210px;
+          }
+        }
+      }
+    }
+    .description-footer {
+      margin-top: 30px;
+      overflow: hidden;
+      padding: 0 15px;
+      p {
+        @extend %font-size13;
+        float: left;
+        width: 64%;
+        @include tablet {
+         width: 100%;
+        }
+      }
+      a {
+        background: url(../asset/images/logo.png) no-repeat;
+        height: 37px;
+        width: 148px;
+        float: right;
+      }
+    }
+  }
+}
